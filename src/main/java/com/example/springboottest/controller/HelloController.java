@@ -9,4 +9,9 @@ public class HelloController {
     public  String helloWorld(){
         return  "hello World - SprigBoot";
     }
+
+    @RequestMapping("/java")
+    public  String helloJava(){
+        return  "hello Java";
+    }
 }
