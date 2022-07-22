@@ -14,4 +14,11 @@ public class HelloController {
     public  String helloJava(){
         return  "hello Java";
     }
+
+
+    @RequestMapping("/haha")
+    public  String haha(){
+        return  "haha";
+    }
+
 }
