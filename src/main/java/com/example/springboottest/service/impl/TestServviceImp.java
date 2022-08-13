@@ -1,4 +1,4 @@
-package com.example.springboottest.service.imp;
+package com.example.springboottest.service.impl;
 
 /**
  * 测试接口实现类
