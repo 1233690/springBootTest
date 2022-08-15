@@ -47,8 +47,9 @@ public class UserController {
 //        return  1;
     }
 
-    public int updateUserById() {
-        return 1;
+    @PostMapping("/updateUser")
+    public int updateUserById(User user) {
+        return  userService.updateUserById(user);
     }
 
     @PostMapping("/saveUser")

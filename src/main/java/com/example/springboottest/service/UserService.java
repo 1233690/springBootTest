@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @date 2022/8/12 16:08
  */
 @Service
-public interface UserService  {
+public interface UserService {
     String findUserNameById(String id);
 
 
@@ -18,6 +18,7 @@ public interface UserService  {
 
     int deleteUserById(String id);
 
+    int updateUserById(User user);
 
     int saveUser(User user);
 }
