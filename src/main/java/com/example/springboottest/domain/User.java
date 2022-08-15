@@ -1,5 +1,8 @@
 package com.example.springboottest.domain;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.ToString;
@@ -18,6 +21,8 @@ public class User {
     private String password;
     private String name;
     private String sex;
+    @TableLogic()//该注解表示使用逻辑删除
+    @TableField(fill = FieldFill.INSERT)  //执行插入时自动填充
     private Byte activated;
 
 }

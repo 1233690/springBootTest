@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 @Component
-public class UserServiceImpl extends ServiceImpl<UserMapper,User > implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
@@ -28,6 +28,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User > implements Us
     @Override
     public int deleteUserById(String id) {
         return userMapper.deleteById(id);
+    }
+
+    @Override
+    public int saveUser(User user) {
+        return userMapper.insert(user);
     }
 
     @Override

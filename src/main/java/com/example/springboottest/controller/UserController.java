@@ -47,5 +47,14 @@ public class UserController {
 //        return  1;
     }
 
+    public int updateUserById() {
+        return 1;
+    }
+
+    @PostMapping("/saveUser")
+    public  int insertUser(User user){
+        return  userService.saveUser(user);
+    }
+
 
 }

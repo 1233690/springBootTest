@@ -1,6 +1,6 @@
 package com.example.springboottest.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
+
 import com.example.springboottest.domain.User;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @date 2022/8/12 16:08
  */
 @Service
-public interface UserService  extends IService<User> {
+public interface UserService  {
     String findUserNameById(String id);
 
 
@@ -18,4 +18,6 @@ public interface UserService  extends IService<User> {
 
     int deleteUserById(String id);
 
+
+    int saveUser(User user);
 }
