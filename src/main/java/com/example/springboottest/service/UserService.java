@@ -2,6 +2,7 @@ package com.example.springboottest.service;
 
 
 import com.example.springboottest.domain.User;
+import com.example.springboottest.dto.UserDTO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +14,7 @@ public interface UserService {
     String findUserNameById(String id);
 
 
-    User findUserById(String id);
+    UserDTO findUserById(String id);
 
 
     int deleteUserById(String id);

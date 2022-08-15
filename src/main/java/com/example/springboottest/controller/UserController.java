@@ -1,8 +1,10 @@
 package com.example.springboottest.controller;
 
 import com.example.springboottest.domain.User;
+import com.example.springboottest.dto.UserDTO;
 import com.example.springboottest.result.Result;
 import com.example.springboottest.service.UserService;
+import com.example.springboottest.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,10 +32,10 @@ public class UserController {
     }
 
     @GetMapping("/findUser")
-    public Result<User> findUserById() {
+    public Result<UserDTO> findUserById() {
         String id = String.valueOf(1);
         log.info("传入id：{}", id);
-        User result = userService.findUserById(id);
+        UserDTO result = userService.findUserById(id);
         log.info("查询结果：{}", result);
         return Result.success(result);
     }
