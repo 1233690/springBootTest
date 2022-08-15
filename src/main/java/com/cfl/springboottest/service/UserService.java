@@ -1,8 +1,8 @@
-package com.example.springboottest.service;
+package com.cfl.springboottest.service;
 
 
-import com.example.springboottest.domain.User;
-import com.example.springboottest.dto.UserDTO;
+import com.cfl.springboottest.domain.User;
+import com.cfl.springboottest.dto.UserDTO;
 import org.springframework.stereotype.Service;
 
 /**

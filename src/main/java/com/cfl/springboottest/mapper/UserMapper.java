@@ -1,7 +1,7 @@
-package com.example.springboottest.mapper;
+package com.cfl.springboottest.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.springboottest.domain.User;
+import com.cfl.springboottest.domain.User;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

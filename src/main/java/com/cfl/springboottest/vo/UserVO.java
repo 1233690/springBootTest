@@ -1,4 +1,4 @@
-package com.example.springboottest.vo;
+package com.cfl.springboottest.vo;
 
 import lombok.Data;
 

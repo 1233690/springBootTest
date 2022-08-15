@@ -1,14 +1,12 @@
-package com.example.springboottest.service.impl;
+package com.cfl.springboottest.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.springboottest.domain.User;
-import com.example.springboottest.dto.UserDTO;
-import com.example.springboottest.mapper.UserMapper;
-import com.example.springboottest.service.UserService;
+import com.cfl.springboottest.service.UserService;
+import com.cfl.springboottest.domain.User;
+import com.cfl.springboottest.dto.UserDTO;
+import com.cfl.springboottest.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**

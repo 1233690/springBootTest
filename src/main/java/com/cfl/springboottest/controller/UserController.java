@@ -1,10 +1,9 @@
-package com.example.springboottest.controller;
+package com.cfl.springboottest.controller;
 
-import com.example.springboottest.domain.User;
-import com.example.springboottest.dto.UserDTO;
-import com.example.springboottest.result.Result;
-import com.example.springboottest.service.UserService;
-import com.example.springboottest.vo.UserVO;
+import com.cfl.springboottest.domain.User;
+import com.cfl.springboottest.dto.UserDTO;
+import com.cfl.springboottest.result.Result;
+import com.cfl.springboottest.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.example.springboottest.dto;
+package com.cfl.springboottest.dto;
 
 import lombok.Data;
 

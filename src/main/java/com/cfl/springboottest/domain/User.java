@@ -1,4 +1,4 @@
-package com.example.springboottest.domain;
+package com.cfl.springboottest.domain;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

@@ -1,4 +1,4 @@
-package com.example.springboottest.result;
+package com.cfl.springboottest.result;
 
 import java.util.HashMap;
 import java.util.Map;
