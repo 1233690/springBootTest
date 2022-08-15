@@ -30,9 +30,9 @@ public class UserController {
         return result;
     }
 
-    @GetMapping("/findUser")
-    public Result<UserDTO> findUserById() {
-        String id = String.valueOf(1);
+    @GetMapping("/findUser/{id}")
+    public Result<UserDTO> findUserById(@PathVariable String id) {
+//        String id = String.valueOf(1);
         log.info("传入id：{}", id);
         UserDTO result = userService.findUserById(id);
         log.info("查询结果：{}", result);
