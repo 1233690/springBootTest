@@ -1,6 +1,7 @@
 package com.example.springboottest.controller;
 
 import com.example.springboottest.domain.User;
+import com.example.springboottest.result.Result;
 import com.example.springboottest.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,12 @@ public class UserController {
     }
 
     @GetMapping("/findUser")
-    public User findUserById() {
+    public Result<User> findUserById() {
         String id = String.valueOf(1);
         log.info("传入id：{}", id);
         User result = userService.findUserById(id);
         log.info("查询结果：{}", result);
-        return result;
+        return Result.success(result);
     }
 
     @GetMapping("/deleteUser")
@@ -49,12 +50,12 @@ public class UserController {
 
     @PostMapping("/updateUser")
     public int updateUserById(User user) {
-        return  userService.updateUserById(user);
+        return userService.updateUserById(user);
     }
 
     @PostMapping("/saveUser")
-    public  int insertUser(User user){
-        return  userService.saveUser(user);
+    public int insertUser(User user) {
+        return userService.saveUser(user);
     }
 
 
