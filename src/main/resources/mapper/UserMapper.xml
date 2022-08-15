@@ -2,7 +2,6 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--namespace根据自己需要创建的的mapper的路径和名称填写-->
 <mapper namespace="com.example.springboottest.mapper.UserMapper">
     <select id="findUserById"  parameterType="string" resultType="com.example.springboottest.domain.User">
         select *
@@ -11,6 +10,8 @@
     </select>
 
     <select id="findUserNameById" parameterType="string" resultType="string">
-
+        select name
+        from user
+        where id = #{id}
     </select>
 </mapper>

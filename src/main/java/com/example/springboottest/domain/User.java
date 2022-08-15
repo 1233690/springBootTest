@@ -13,10 +13,11 @@ import lombok.ToString;
 @TableName("user")
 public class User {
 
-    private  Integer id;
-    private  String userName;
-    private  String password;
-    private  String name;
-    private  String sex;
+    private Long id;
+    private String userName;
+    private String password;
+    private String name;
+    private String sex;
+    private Byte activated;
 
 }
