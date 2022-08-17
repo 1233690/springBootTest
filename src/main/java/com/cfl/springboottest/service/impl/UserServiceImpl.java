@@ -1,9 +1,13 @@
 package com.cfl.springboottest.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cfl.springboottest.dto.PageBean;
 import com.cfl.springboottest.service.UserService;
 import com.cfl.springboottest.domain.User;
 import com.cfl.springboottest.dto.UserDTO;
 import com.cfl.springboottest.mapper.UserMapper;
+import com.cfl.springboottest.vo.RegisterVO;
 import com.cfl.springboottest.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -37,6 +41,18 @@ public class UserServiceImpl implements UserService {
         return userDTO;
     }
 
+//    @Override
+//    public PageBean findAllUser() {
+//        int currentPage=1;
+//        int size=10;
+//        //开启分页
+//        Page<User> page = new Page<>(currentPage, size);
+//        IPage<User> UserByPage = userMapper.getUserByPage(page, employee, beginDateScope);
+//        PageBean respPageBean = new PageBean(employeeByPage.getTotal(),employeeByPage.getRecords());
+//        return respPageBean;
+//
+//    }
+
     @Override
     public int deleteUserById(String id) {
         return userMapper.deleteById(id);
@@ -48,10 +64,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int saveUser(UserVO userVO) {
+    public Integer saveUser(UserVO userVO) {
         User user = new User();
         log.info("userVO:{}", String.valueOf(userVO));
         BeanUtils.copyProperties(userVO, user);
+        return userMapper.insert(user);
+    }
+
+    @Override
+    public int signUp(RegisterVO registerVO) {
+        User user = new User();
+        log.info("userVO:{}", String.valueOf(registerVO));
+        BeanUtils.copyProperties(registerVO, user);
         return userMapper.insert(user);
     }
 
