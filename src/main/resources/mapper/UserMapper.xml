@@ -3,15 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cfl.springboottest.mapper.UserMapper">
-    <select id="findUserById"  parameterType="string" resultType="com.cfl.springboottest.domain.User">
+    <select id="findUserById" parameterType="string" resultType="com.cfl.springboottest.domain.User">
         select *
         from user
         where id = #{id}
+          and activated = 1
     </select>
 
     <select id="findUserNameById" parameterType="string" resultType="string">
         select name
         from user
         where id = #{id}
+          and activated = 1
     </select>
 </mapper>

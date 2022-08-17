@@ -12,7 +12,6 @@ import lombok.ToString;
  * @date 2022/8/12 16:50
  */
 @Data
-@ToString
 @TableName("user")
 public class User {
 

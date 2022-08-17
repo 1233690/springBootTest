@@ -3,6 +3,7 @@ package com.cfl.springboottest.service;
 
 import com.cfl.springboottest.domain.User;
 import com.cfl.springboottest.dto.UserDTO;
+import com.cfl.springboottest.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,5 +22,5 @@ public interface UserService {
 
     int updateUserById(User user);
 
-    int saveUser(User user);
+    int saveUser(UserVO user);
 }
