@@ -30,13 +30,13 @@ public class UserController {
     private UserService userService;
 
 
-
     @PostMapping("/signUp")
     @ApiOperation(value = "用户注册", notes = "用户注册")
-    public Result signUp(@RequestBody @Validated RegisterVO registerVO) {
+    public Result signUp(@Validated @RequestBody RegisterVO registerVO) {
         userService.signUp(registerVO);
         return Result.success();
     }
+
     @ApiOperation("通过id查找用户姓名")
     @GetMapping("/findUserName/{id}")
     public Result<String> findUserNameById(@PathVariable String id) {
@@ -74,7 +74,7 @@ public class UserController {
 
     @ApiOperation("修改用户信息")
     @PostMapping("/updateUser")
-    public Result updateUserById(@RequestBody @ModelAttribute User user) {
+    public Result updateUserById(@RequestBody User user) {
         return Result.success(userService.updateUserById(user));
     }
 

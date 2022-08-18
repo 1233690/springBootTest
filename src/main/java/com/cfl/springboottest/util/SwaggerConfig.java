@@ -1,17 +1,17 @@
 package com.cfl.springboottest.util;
 
-import io.swagger.annotations.ApiOperation;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.oas.annotations.EnableOpenApi;
+
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
@@ -19,8 +19,8 @@ import springfox.documentation.spring.web.plugins.Docket;
  * @date 2022/8/16 20:28
  */
 @Configuration
-@EnableOpenApi
-//@EnableSwaggerBootstrapUI
+@EnableSwagger2
+//@EnableOpenApi
 public class SwaggerConfig {
 
 
@@ -35,28 +35,28 @@ public class SwaggerConfig {
      * http:IP:端口号/swagger-ui/index.html 原生地址
      * http:IP:端口号/doc.html bootStrap-UI地址
      */
-    @Bean
-    public Docket desertsApi(){
+   /* @Bean
+    public Docket desertsApi() {
         return new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
+                //多人开发时分组
+                .groupName("default")
                 //是否启用Swagger
                 .enable(true)
                 .select()
                 //基于包进行扫描
                 //RequestHandlerSelectors.basePackage()//基于包进行扫描
-//                 .apis(RequestHandlerSelectors.any())//扫描全部
+//                .apis(RequestHandlerSelectors.any())//扫描全部
                 //RequestHandlerSelectors.none()//不扫描
-//                .apis(RequestHandlerSelectors.basePackage("com.cfl.springboottest.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.cfl.springboottest"))
                 // 扫描所有有注解的api，用这种方式更灵活
-               .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+//               .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
-                .build()
-                //多人开发时分组
-                .groupName("default");
+                .build();
     }
 
     // 配置Swagger信息 apiInfo
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("API说明文档")
                 .description("API说明文档")
@@ -64,6 +64,26 @@ public class SwaggerConfig {
                 .termsOfServiceUrl("https://www.zybuluo.com/mdeditor#2281023-full-reader")
                 .version("1.0")
                 .build();
+    }*/
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cfl.springboottest"))
+                .paths(PathSelectors.any())
+                .build();
     }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("swagger-bootstrap-ui RESTful APIs")
+                .description("swagger-bootstrap-ui")
+                .termsOfServiceUrl("http://localhost:8999/")
+                .contact("developer@mail.com")
+                .version("1.0")
+                .build();
+    }
+
 
 }

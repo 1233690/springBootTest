@@ -9,7 +9,7 @@ import lombok.Data;
  * @date 2022/8/17 16:10
  */
 @Data
-@ApiModel("注册用户对象入参")
+@ApiModel(value="注册用户对象入参",description = "注册用户对象入参")
 public class RegisterVO {
 
     @ApiModelProperty("用户名")
